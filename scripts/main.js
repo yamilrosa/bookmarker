@@ -42,7 +42,9 @@ function saveBookmark(e) {
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
         }
-    
+
+
+    fetchBookmarks();
 }
 
 //add event listener to form
@@ -71,7 +73,7 @@ function fetchBookmarks() {
         <div class="border border-secondary mb-3 p-3" >
         
             <h5>${item.name}
-                <a class="btn btn-secondary target="_blank" href=${item.url}>Visit</a>
+                <a class="btn btn-secondary target="_blank" href="${item.url}">Visit</a>
                 <a class="btn btn-danger text-white" id="delete" name=${item.name} >Delete</a>
             </h5>
             
