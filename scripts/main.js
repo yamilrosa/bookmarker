@@ -15,7 +15,7 @@ function saveBookmark(e) {
         url: siteUrl
     }
 
-    console.log(bookmark);
+    
 
     // //local storage test
     // localStorage.setItem('test', 'Hello World');
@@ -45,7 +45,17 @@ function saveBookmark(e) {
 
         }
     
-
-
+    
+  
 
 }
+
+//fetch bookmarks
+function fetchBookmarks() {
+
+    //get bookmarks from localstorage
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    console.log(bookmarks)
+}
+
