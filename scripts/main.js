@@ -1,6 +1,3 @@
-//list for for submit
-document.getElementById('myForm').addEventListener('submit', saveBookmark);
-
 
 //save Bookmark
 function saveBookmark(e) {
@@ -46,10 +43,11 @@ function saveBookmark(e) {
 
         }
     
-    
-  
-
 }
+
+//add event listener to form
+document.getElementById('myForm').addEventListener('submit', saveBookmark);
+
 
 //fetch bookmarks
 function fetchBookmarks() {
@@ -71,10 +69,58 @@ function fetchBookmarks() {
         //add to dom
         bookmarksResults.innerHTML += `
         <div class="border border-secondary mb-3 p-3" >
-            <h5>${item.name}</h5>
+        
+            <h5>${item.name}
+                <a class="btn btn-secondary target="_blank" href=${item.url}>Visit</a>
+                <a class="btn btn-danger text-white" id="delete" name=${item.name} >Delete</a>
+            </h5>
+            
+
         </div>
         `;
     })
 
 }
+
+
+//add delete functionality
+
+
+//grab list div
+const bookmarksResultsDiv = document.getElementById('bookmarksResults');
+
+
+
+//add delete bookmark on dom function
+function deleteBookmark(e) {
+
+    //check if delete button was clicked
+    if(e.target.id === 'delete') {
+        deleteBookmarkOnLocalStorage(e)
+        e.target.parentNode.parentNode.remove();
+        
+    }
+
+
+}
+
+
+//delete bookmark in local storage function
+function deleteBookmarkOnLocalStorage(e) {
+    //get array from local storage
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    //filter through array and update array
+    const updatedBookmarks = bookmarks.filter( item => {
+        return e.target.name !== item.name
+    })
+
+    //set back to local storage
+    localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks)); 
+}
+
+
+
+//add event listener
+bookmarksResultsDiv.addEventListener('click', deleteBookmark)
 
