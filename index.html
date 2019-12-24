@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" crossorigin="anonymous">
+    <title>Site Bookmarker</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Bookmarker</h1>
+        <div class="container">
+            <form action="" id="myForm">
+                <label for="">Site Name</label>
+                <input type="text" class="form-control mb-3" id="siteName" placeholder="Website" >
+                <label for="">Site URL</label>
+                <input type="text" class="form-control mb-3" id="siteUrl" placeholder="Website Url" >
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="bookmarksResults"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2020 Bookmarker</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
