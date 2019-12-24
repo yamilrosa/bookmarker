@@ -1,3 +1,6 @@
+//load bookmarks to dom on page load
+window.addEventListener("load", fetchBookmarks())
+
 
 //save Bookmark
 function saveBookmark(e) {
